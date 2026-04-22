@@ -40,7 +40,7 @@ jobs:
       working-directory: infra/
 
     - name: Deploy to S3
-      run: aws s3 sync app/ s3://${{ steps.tf_output.outputs.bucket }} --delete
+      run: aws s3 sync .app/ s3://${{ steps.tf_output.outputs.bucket }} --delete
 
     - name: Show Website URL
       run: terraform output website_url
